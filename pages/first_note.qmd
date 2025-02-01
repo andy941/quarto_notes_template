@@ -1,0 +1,100 @@
+---
+title: "First note title"
+date: 03/07/2005
+date-format: "DD MMMM YYYY"
+date-modified: last-modified
+---
+
+Cool citation to show you know what you are talking about [@einstein].
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{r}
+#| label: imports-and-functions-r
+#| code-summary: "Imports and Functions - R"
+#| output: false
+
+library(tidyverse)
+library(reticulate)
+library(ggpubr)
+library(ggthemes)
+library(kableExtra)
+```
+
+Code.
+
+```{r}
+#| label: code
+#| code-summary: code-for-plot
+
+print("Hello world")
+```
+
+
+An equation:
+
+$$
+\hat{y}_i = 3 + 4(1)
+$$
+
+```{r}
+#| code-summary: code-for-plot
+
+print("Hello world")
+```
+
+---
+
+Plot in python
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={"projection": "polar"})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+Plot in R
+
+```{r}
+#| label: fig-car
+#| fig-cap: "cars"
+
+ggplot(iris, aes(Petal.Length, Petal.Width, colour = Species)) +
+  geom_point() +
+  theme_few()
+```
+
+Dynamic plots!
+
+```{r}
+#| label: fig-slider
+#| fig-cap: "slide"
+
+library(plotly)
+
+library(ggplot2)
+
+df <- data.frame(
+  x = c(1, 2, 3, 4),
+  y = c(1, 2, 3, 4),
+  f = c(1, 2, 3, 4)
+)
+
+p <- ggplot(df, aes(x, y)) +
+  geom_point(aes(frame = f)) +
+  theme_few()
+
+ggplotly(p)
+```

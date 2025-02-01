@@ -1,0 +1,10 @@
+---
+title: "Notes"
+authors:
+  name: "Andrea Finocchio"
+  affiliation: Me Myself & I
+  roles: Senior Bioinformatics Scientist
+  corresponding: true
+---
+
+Add information about the website or a dashboard here.
